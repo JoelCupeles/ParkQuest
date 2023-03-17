@@ -28,6 +28,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 /* Logo styles */
@@ -79,5 +80,17 @@ header nav {
     --fs-h2: 4rem;
     --fs-h3: 1.5rem;
     --fs-body: 1.125rem;
+  }
+  /* Header styles */
+  header {
+    flex-direction: row;
+  }
+  /* Logo styles */
+  header h1 {
+    margin-left: 2rem;
+  }
+  /* Navigation styles */
+  header nav {
+    margin-right: 2rem;
   }
 }/*# sourceMappingURL=main.css.map */
