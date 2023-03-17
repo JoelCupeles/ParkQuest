@@ -42,20 +42,26 @@
       </div>
 
       <div class="search">
-        <p class="">SEARCH</p>
+        <form id="search-form">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" placeholder="Enter city or zipcode" required />
+          <button type="submit" id="search-button">Search</button>
+        </form>
       </div>
 
       <div class="main">
-        <div>Park Name</div>
-        <div>Image</div>
-        <div>Facts</div>
-        <div>Weather</div>
-        <div>Directions</div>
-      </div>
-
-      <div class="footer">
-        <p class="">FOOTER</p>
-      </div>
+        <div id="park-info">
+          <h2>Park Name</h2>
+          <img src="#" alt="Park Image" id="park-image" />
+          <p id="park-facts">Facts</p>
+          <p id="park-directions">Directions</p>
+        </div>
+        
+        <div id="weather-info">
+          <h2>Weather</h2>
+          <p id="current-weather">Current Weather</p>
+          <p id="forecast">Forecast</p>
+        </div>
 
 
     </div>
