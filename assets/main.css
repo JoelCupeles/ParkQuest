@@ -1,1 +1,96 @@
-/*# sourceMappingURL=main.css.map */
+:root {
+  --white:#ffffff;
+  --cool-gray: #7f7f7f;
+  --light-teal: #6fbfb2;
+  --dark-gray: #4c4c4c;
+  --font-color: #303952;
+  --cool-gray: #7f7f7f;
+  --light-pink: #f8a5c2;
+  --dark-purple: #574b90;
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "Poppins", sans-serif;
+  --tertiary-font: "Montserrat", sans-serif;
+  --fs-h1: 3rem;
+  --fs-h2: 2.2rem;
+  --fs-h3: 1.5rem;
+  --fs-body: 1rem;
+}
+
+/* Center all elements horizontally */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo styles */
+header h1 {
+  margin: 0;
+  background-color: red;
+  margin-right: auto;
+  font-size: var(--fs-h1);
+}
+
+/* Navigation styles */
+header nav {
+  display: flex;
+  margin-left: auto;
+  background-color: yellow;
+}
+
+/* Subheading styles */
+.subheading {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: blue;
+}
+
+/* Search bar styles */
+.search {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: green;
+}
+
+/* Main content styles */
+.main {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: #f8a5c2;
+}
+
+/* Footer styles */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: orange;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 4rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+  /* Header styles */
+  header {
+    flex-direction: row;
+  }
+  /* Logo styles */
+  header h1 {
+    margin-left: 2rem;
+  }
+  /* Navigation styles */
+  header nav {
+    margin-right: 2rem;
+  }
+}/*# sourceMappingURL=main.css.map */
