@@ -15,6 +15,7 @@
     --fs-h3: 1.5rem;
     --fs-body: 1rem;
   }
+  $fontprimary: red;
 
 /* Center all elements horizontally */
 
@@ -23,29 +24,59 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  
+  .test {
+    background-color: blue($color: #191dda);
+
+    h2 {
+      color: $fontprimary; 
+    }
+  }
   /* Header styles */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background: url(./Bridge.jpg);
+    background-size: cover;
+    background-position: center;
   }
-  
-  /* Logo styles */
-  header h1 {
-    margin: 0;
-    background-color: red;
-    margin-right: auto;
-    font-size: var(--fs-h1);
+
+  #search-button:hover {
+    box-shadow: 2px 2px 2px 2px rgb(252, 255, 49);
+    
   }
+
+
   
   /* Navigation styles */
-  header nav {
-    display: flex;
-    margin-left: auto;
-    background-color: yellow;
-  }
+
+  
+  
+  body{
+    font-size: 14px;
+    font-family: Arial,sans-serif;
+}
+ul {
+    padding: 0;
+    list-style: none;
+    background: #f2f2f2;
+}
+ul li {
+    display: inline-block;
+}
+ul li a {
+    display: block;
+    padding: 10px 25px;
+    color: #333;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: #fff;
+    background: #939393;
+    background-image: url(./Tree.png);
+    background-size: 100%;
+}
   
   /* Subheading styles */
   .subheading {
@@ -88,14 +119,18 @@ body {
   header {
     flex-direction: row;
   }
-
+ // linear-gradient(to right, #23792f -30%, #9e6906)//
   /* Logo styles */
   header h1 {
-    margin-left: 2rem;
-  }
 
-  /* Navigation styles */
-  header nav {
-    margin-right: 2rem;
+    font-size: 70px;
+    font-weight: 600;
+    background: url(./Sky.jpg);
+    background-size: 70px 70px;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin: 0;
+    margin-right: auto;
   }
 }
