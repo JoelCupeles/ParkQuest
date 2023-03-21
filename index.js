@@ -35,6 +35,35 @@ function displayWeatherInfo(data) {
   forecast.innerText = `Forecast: ${data.main.temp_min}°F - ${data.main.temp_max}°F`;
 }
 
+function getParks(location) {
+  var parkUrl = `https://developer.nps.gov/api/v1/parks?q=${location}&api_key=${API_KEY_NPS}`;
+
+  fetch(parkUrl)
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error("Failed to fetch park data");
+      }
+      return response.json();
+    })
+    .then(function(data) {
+      displayParkInfo(data.data[0]);
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
+}
+
+function displayParkInfo(park) {
+  var parkImage = document.getElementById("park-image");
+  var parkFacts = document.getElementById("park-facts");
+  var parkDirections = document.getElementById("park-directions");
+
+  parkImage.src = park.images[0].url;
+  parkImage.alt = park.images[0].altText;
+  parkFacts.innerText = park.description;
+  parkDirections.innerText = `Directions: ${park.directionsInfo}`;
+}
+
 //   document.getElementById("search-form").addEventListener("submit", function (event) {
 //     event.preventDefault();
 //     const state = document.getElementById("location").value.trim();
