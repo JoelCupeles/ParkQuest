@@ -21,6 +21,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(./bridge2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.test {
+  background-color: 218;
 }
 
 /* Header styles */
@@ -29,42 +36,90 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  background: url(./Bridge.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 /* Logo styles */
-header h1 {
+h1 {
+  font-size: 70px;
+  font-weight: 600;
+  background: url(./Sky.jpg);
+  background-size: 70px 70px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   margin: 0;
-  background-color: red;
   margin-right: auto;
-  font-size: var(--fs-h1);
+  text-align: center;
 }
 
-/* Navigation styles */
-header nav {
-  display: flex;
-  margin-left: auto;
-  background-color: yellow;
+h2 {
+  font-weight: bolder;
+  text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5);
+  font-size: larger;
+}
+
+p {
+  font-weight: bolder;
+  text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5);
+}
+
+img {
+  max-width: 400px;
+  max-height: 300px;
+}
+
+body {
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  background: #f2f2f2;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  display: block;
+  padding: 10px 25px;
+  color: #333;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: #fff;
+  background: #939393;
+  background-image: url(./Tree.png);
+  background-size: 100%;
 }
 
 /* Subheading styles */
 .subheading {
   margin-top: 2rem;
   text-align: center;
-  background-color: blue;
+  background-color: none;
+  font-size: larger;
 }
 
 /* Search bar styles */
 .search {
   margin-top: 2rem;
   text-align: center;
-  background-color: green;
 }
 
 /* Main content styles */
 .main {
   margin-top: 2rem;
   text-align: center;
-  background-color: #f8a5c2;
+  -webkit-text-decoration: double;
+          text-decoration: double;
 }
 
 /* Footer styles */
@@ -81,57 +136,19 @@ header nav {
     --fs-h3: 1.5rem;
     --fs-body: 1.125rem;
   }
-  /* Header styles */
-  header {
-    flex-direction: row;
-  }
-  /* Logo styles */
-  header h1 {
-    margin-left: 2rem;
-  }
-  /* Navigation styles */
-  header nav {
-    margin-right: 2rem;
-  }
-}/*# sourceMappingURL=main.css.map */
-
-
-
-/* CSS CODE FOR MODAL - PUT INTO SCSS */
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+button {
+  --x: 50%;
+  --y: 50%;
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1em 2em;
+  color: white;
   cursor: pointer;
-}
+  outline: none;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}/*# sourceMappingURL=main.css.map */
