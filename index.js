@@ -24,6 +24,8 @@ document.getElementById("search-form").addEventListener("submit", function(event
   + "&api_key="
   + API_KEY_NPS;
 
+  document.getElementById("park-container").innerHTML = "";
+
   fetch(parkUrl)
     .then(function(response) {
       if (!response.ok) {
@@ -131,3 +133,26 @@ function displayParkInfo(park, index) {
   parkContainer.appendChild(parkDiv);
 
 }
+// Get the modal and other elements
+const contactModal = document.getElementById('contactModal');
+const contactLink = document.querySelector('.nav-item a[href="#contact"]');
+const closeContactBtn = document.querySelector('.close-contact');
+
+// Open the modal when "Contact Us" link is clicked
+contactLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  contactModal.style.display = 'block';
+});
+
+// Close the modal when the close button is clicked
+closeContactBtn.addEventListener('click', () => {
+  contactModal.style.display = 'none';
+});
+
+
+// Close the modal when the user clicks outside of the modal content
+window.addEventListener('click', (event) => {
+  if (event.target === contactModal) {
+    contactModal.style.display = 'none';
+  }
+});
