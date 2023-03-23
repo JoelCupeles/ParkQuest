@@ -130,6 +130,5 @@ function displayParkInfo(park, index) {
   parkFacts.innerText = park.description;
   parkDirections.innerText = "Directions:" + park.directionsInfo;
 
-  parkDiv.append(parkTitle,parkImage,parkFacts,parkDirections);
-  parkContainer.appendChild(parkDiv);
+
 }
