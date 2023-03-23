@@ -6,6 +6,14 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 // console.log(modal);
 
+//hide function//
+const about = document.getElementById("about")
+
+about.addEventListener("click", function (){
+  about.classList.add('hide')
+})
+//
+
 document.getElementById("search-form").addEventListener("submit", function(event) {
   event.preventDefault();
   var location = document.getElementById("location").value;

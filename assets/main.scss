@@ -17,6 +17,9 @@
   }
   $fontprimary: red;
 
+.hide{
+  display:none;
+}
 /* Center all elements horizontally */
 
 body {
@@ -34,19 +37,27 @@ body {
   }
   /* Header styles */
   header {
-    display: flex;
+    display: fixed;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    height:--fs-h1;
+    width: 100vw;
     background: url(./Bridge.jpg);
     background-size: cover;
     background-position: center;
   }
-  
+  nav {
+    display: fixed;
+    text-align: center;
+  }
+  a {
+    background-color: #16f033cc;
+    display: fixed;
+  }
   /* Logo styles */
 h1 {
     font-size: 70px;
-    font-weight: 600;
+    font-weight: 60px;
     background: url(./Sky.jpg);
     background-size: 70px 70px;
     color: transparent;
@@ -55,6 +66,7 @@ h1 {
     margin: 0;
     margin-right: auto;
     text-align: center;
+    font-family: --primary-font;
   }
 h2 {
   font-weight: bolder;
@@ -79,7 +91,7 @@ body{
 ul {
     padding: 0;
     list-style: none;
-    background: #f2f2f2;
+    
 }
 ul li {
     display: inline-block;
@@ -122,7 +134,6 @@ ul li a:hover {
   .footer {
     margin-top: 2rem;
     text-align: center;
-    background-color: orange;
   }
   
 
