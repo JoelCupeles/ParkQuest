@@ -158,3 +158,23 @@ window.addEventListener('click', (event) => {
     contactModal.style.display = 'none';
   }
 });
+
+const aboutLink = document.querySelector('.nav-item a[href="#about"]');
+const aboutPopup = document.getElementById('aboutPopup');
+const closeBtn = document.querySelector('.close');
+
+aboutLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  aboutPopup.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+  aboutPopup.style.display = 'none';
+});
+
+//Close the popup when the user clicks outside of the content area
+window.addEventListener('click', (event) => {
+  if (event.target === aboutPopup) {
+    aboutPopup.style.display = 'none';
+  }
+});
