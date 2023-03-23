@@ -15,7 +15,6 @@
     --fs-h3: 1.5rem;
     --fs-body: 1rem;
   }
-  $fontprimary: red;
 
 .hide{
   display:none;
@@ -26,15 +25,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./bridge2.jpg); 
-    background-repeat: no-repeat;
-    background-size: cover;
   }
-  .test {
-    background-color: blue($color: #191dda);
-
-    
-  }
+  
   /* Header styles */
   header {
     display: fixed;
@@ -64,6 +56,7 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     margin: 0;
+    background-color: red;
     margin-right: auto;
     text-align: center;
     font-family: --primary-font;
@@ -77,8 +70,46 @@ h2 {
 p {
 font-weight: bolder;
 text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5);
-
 }
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 800px;
+}
+
+
+.close-contact {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-contact:hover,
+.close-contact:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 img {
   max-width: 400px;
@@ -113,21 +144,21 @@ ul li a:hover {
   .subheading {
     margin-top: 2rem;
     text-align: center;
-    background-color: none;
-    font-size: larger;
+    background-color: blue;
   }
   
   /* Search bar styles */
   .search {
     margin-top: 2rem;
     text-align: center;
+    background-color: green;
   }
   
   /* Main content styles */
   .main {
     margin-top: 2rem;
     text-align: center;
-    text-decoration: double;
+    background-color: #f8a5c2;
   }
   
   /* Footer styles */
@@ -144,10 +175,16 @@ ul li a:hover {
     --fs-h3: 1.5rem;
     --fs-body: 1.125rem;
   }
- }
 
+  /* Header styles */
+  header {
+    flex-direction: row;
+  }
 
-//button css//
+  /* Logo styles */
+  header h1 {
+    margin-left: 2rem;
+  }
 
 button {
 	--x: 50%;
@@ -204,4 +241,5 @@ button {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
 }
