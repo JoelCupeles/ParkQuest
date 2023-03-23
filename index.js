@@ -6,13 +6,13 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 // console.log(modal);
 
-//hide function//
-//const about = document.getElementById("about")
+// //hide function//
+// const about = document.getElementById("about")
 
-//about.addEventListener("click", function (){
-  //about.classList.add('hide')
-//})
-//
+// about.addEventListener("click", function (){
+//   about.classList.add('hide')
+// })
+
 
 document.getElementById("search-form").addEventListener("submit", function(event) {
   event.preventDefault();
@@ -137,6 +137,9 @@ function displayParkInfo(park, index) {
   parkImage.alt = park.images[0].altText;
   parkFacts.innerText = park.description;
   parkDirections.innerText = "Directions:" + park.directionsInfo;
+
+  parkDiv.append(parkTitle,parkImage,parkFacts,parkDirections);
+  parkContainer.appendChild(parkDiv);
 
 }
 
