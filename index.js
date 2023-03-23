@@ -23,6 +23,8 @@ document.getElementById("search-form").addEventListener("submit", function(event
   + "&api_key="
   + API_KEY_NPS;
 
+  document.getElementById("park-container").innerHTML = '';
+
   fetch(parkUrl)
     .then(function(response) {
       if (!response.ok) {
