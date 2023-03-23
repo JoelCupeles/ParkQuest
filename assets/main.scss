@@ -15,7 +15,6 @@
     --fs-h3: 1.5rem;
     --fs-body: 1rem;
   }
-  $fontprimary: red;
 
 .hide{
   display:none;
@@ -26,15 +25,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(./bridge2.jpg); 
-    background-repeat: no-repeat;
-    background-size: cover;
   }
-  .test {
-    background-color: blue($color: #191dda);
-
-    
-  }
+  
   /* Header styles */
   header {
     display: fixed;
@@ -64,6 +56,7 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     margin: 0;
+    background-color: red;
     margin-right: auto;
     text-align: center;
     font-family: --primary-font;
@@ -151,21 +144,21 @@ ul li a:hover {
   .subheading {
     margin-top: 2rem;
     text-align: center;
-    background-color: none;
-    font-size: larger;
+    background-color: blue;
   }
   
   /* Search bar styles */
   .search {
     margin-top: 2rem;
     text-align: center;
+    background-color: green;
   }
   
   /* Main content styles */
   .main {
     margin-top: 2rem;
     text-align: center;
-    text-decoration: double;
+    background-color: #f8a5c2;
   }
   
   /* Footer styles */
@@ -182,10 +175,16 @@ ul li a:hover {
     --fs-h3: 1.5rem;
     --fs-body: 1.125rem;
   }
- }
 
+  /* Header styles */
+  header {
+    flex-direction: row;
+  }
 
-//button css//
+  /* Logo styles */
+  header h1 {
+    margin-left: 2rem;
+  }
 
 button {
 	--x: 50%;
@@ -242,4 +241,5 @@ button {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
 }
