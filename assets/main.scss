@@ -16,6 +16,9 @@
     --fs-body: 1rem;
   }
 
+.hide{
+  display:none;
+}
 /* Center all elements horizontally */
 
 body {
@@ -26,26 +29,78 @@ body {
   
   /* Header styles */
   header {
-    display: flex;
+    display: fixed;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    height:--fs-h1;
+    width: 100vw;
+    background: url(./Bridge.jpg);
+    background-size: cover;
+    background-position: center;
   }
-  
+  nav {
+    display: fixed;
+    text-align: center;
+  }
+  a {
+    background-color: #16f033cc;
+    display: fixed;
+  }
   /* Logo styles */
-  header h1 {
+h1 {
+    font-size: 70px;
+    font-weight: 60px;
+    background: url(./Sky.jpg);
+    background-size: 70px 70px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     margin: 0;
     background-color: red;
     margin-right: auto;
-    font-size: var(--fs-h1);
+    text-align: center;
+    font-family: --primary-font;
   }
-  
-  /* Navigation styles */
-  header nav {
-    display: flex;
-    margin-left: auto;
-    background-color: yellow;
-  }
+h2 {
+  font-weight: bolder;
+  text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5); 
+  font-size: larger;
+    }
+    
+p {
+font-weight: bolder;
+text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5);
+
+}
+
+img {
+  max-width: 400px;
+  max-height: 300px;
+}
+body{
+    font-size: 24px;
+    font-family: Arial,sans-serif;
+}
+ul {
+    padding: 0;
+    list-style: none;
+    
+}
+ul li {
+    display: inline-block;
+}
+ul li a {
+    display: block;
+    padding: 10px 25px;
+    color: #333;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: #fff;
+    background: #939393;
+    background-image: url(./Tree.png);
+    background-size: 100%;
+}
   
   /* Subheading styles */
   .subheading {
@@ -72,7 +127,6 @@ body {
   .footer {
     margin-top: 2rem;
     text-align: center;
-    background-color: orange;
   }
   
 

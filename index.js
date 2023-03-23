@@ -4,7 +4,15 @@ var API_KEY_WEATHER = "f461f184bb0f987cdbcdefa61ead2cc9";
 var modal = document.getElementById("myModal");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-console.log(modal);
+// console.log(modal);
+
+//hide function//
+const about = document.getElementById("about")
+
+about.addEventListener("click", function (){
+  about.classList.add('hide')
+})
+//
 
 document.getElementById("search-form").addEventListener("submit", function(event) {
   event.preventDefault();
@@ -23,19 +31,24 @@ document.getElementById("search-form").addEventListener("submit", function(event
       return response.json();
     })
     .then(function(data) {
-    
+      console.log('data', data);
       if (data.total === '0') {
         console.log('this is data', data.total);
-        // alert('Not A Valid Input, Please Try Again');
+        // alert('Not A Valid Input, Please Try Again'); - changed to use modals
         modal.style.display = "block";
     }
 
-      displayParkInfo(data.data[0]);
-      console.log('line 65', data.data[0]);
+    for (var i = 0; i < data.total; i++) {
 
-      var zipCode = data.data[0].addresses[0].postalCode;
+      displayParkInfo(data.data[i],i);
+      //console.log('data', data);
+      //console.log('data.total', data.total);
+      //console.log('data.list', data.data[i]);
+
+      var zipCode = data.data[i].addresses[0].postalCode;
       console.log(zipCode);
-      getWeather(zipCode);
+      getWeather(zipCode, i);
+    }
     })
     .catch(function(error) {
     console.error(error);
@@ -56,8 +69,8 @@ window.onclick = function(event) {
   }
 }
 
-function getWeather(zipCode) {
-  console.log('inside getWeather')
+function getWeather(zipCode, index) {
+  //console.log('inside getWeather')
   var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?zip=" 
   + zipCode
   + "&APPID="
@@ -65,7 +78,7 @@ function getWeather(zipCode) {
   + "&units=imperial";
 
   console.log('zip inside weather', zipCode);
-  console.log(weatherUrl);
+  //console.log(weatherUrl);
 
   // USE MODALS
   fetch(weatherUrl)
@@ -76,83 +89,54 @@ function getWeather(zipCode) {
       return response.json();
     })
     .then(function(data) {
-      displayWeatherInfo(data);
+      //console.log('line 79', data);
+      displayWeatherInfo(data, index);
     })
     .catch(function(error) {
       console.error(error);
     });
 }
 
-function displayWeatherInfo(data) {
-  const currentWeather = document.getElementById("current-weather");
-  const forecast = document.getElementById("forecast");
+function displayWeatherInfo(data, index) {
+  // const currentWeather = document.getElementById("current-weather");
+  // const forecast = document.getElementById("forecast");
 
-console.log('line 42', data);
+  var parkDiv = document.querySelector("[data-index='"+ index + "']");
+  var weatherDiv = document.createElement('div');
+  var currentWeather = document.createElement('div');
+  var forecast = document.createElement('h2');
 
-  currentWeather.innerText = `Current Weather: ${data.weather[0].main}, ${data.main.temp}°F`;
-  forecast.innerText = `Forecast: ${data.main.temp_min}°F - ${data.main.temp_max}°F`;
+  // console.log(currentWeather);
+  // console.log(forecast);
+  // console.log('line 42', data);
+  console.log(parkDiv);
+
+  currentWeather.innerText = "Current Weather: " + data.weather[0].main + " " + data.main.temp + "°F";
+  forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
+
+  weatherDiv.append(currentWeather, forecast);
+  parkDiv.appendChild(weatherDiv);
 }
 
-function displayParkInfo(park) {
-  var parkImage = document.getElementById("park-image");
-  var parkFacts = document.getElementById("park-facts");
-  var parkDirections = document.getElementById("park-directions");
+function displayParkInfo(park, index) {
+  // var parkImage = document.getElementById("park-image");
+  // var parkFacts = document.getElementById("park-facts");
+  // var parkDirections = document.getElementById("park-directions");
+  var parkContainer = document.getElementById('park-container')
+  var parkDiv = document.createElement('div');
+  var parkTitle = document.createElement('h2');
+  var parkImage = document.createElement('img');
+  var parkFacts = document.createElement('p');
+  var parkDirections = document.createElement("div");
 
-  parkImage.src = park.images[0].url;
+  parkDiv.setAttribute('class', 'park-info')
+  parkImage.setAttribute('src', park.images[0].url);
+  
+  parkDiv.setAttribute('data-index', index)
+  // parkImage.src = park.images[0].url;
   parkImage.alt = park.images[0].altText;
   parkFacts.innerText = park.description;
-  parkDirections.innerText = `Directions: ${park.directionsInfo}`;
-}
-
-//   document.getElementById("search-form").addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     const state = document.getElementById("location").value.trim();
-
-//     if (state) {
-//       getParks(state, 5);
-//     }
-//   });
-
-//   async function getParks(state, limit) {
-//     const apiKeyPark = "Rzz58GZ8JkegAYxNTbOq1ozAjKlgrXgZc7JTHCuH"; 
-//     const url = `https://developer.nps.gov/api/v1/parks?limit=${limit}&stateCode=${state}&api_key=${apiKeyPark}`;
-
-//     try {
-//       const response = await fetch(url);
-//       if (response.ok) {
-//         const data = await response.json();
-//         const parks = data.data;
-//         displayParks(parks);
-//       } else {
-//         console.error("Error fetching park data:", response.status, response.statusText);
-//       }
-//     } catch (error) {
-//       console.error("Error fetching park data:", error);
-//     }
-//   }
-
-//   function displayParks(parks) {
-//     const parkInfoDiv = document.getElementById("park-info");
-//     parkInfoDiv.innerHTML = "";
-
-//     parks.forEach((park) => {
-//       const parkDiv = document.createElement("div");
-//       parkDiv.innerHTML = `
-//         <h2>${park.fullName}</h2>
-//         <img src="${park.images.length > 0 ? park.images[0].url : '#'}" alt="${park.images.length > 0 ? park.images[0].altText : 'Park Image'}" />
-//         <p>${park.description}</p>
-//         <p><a href="${park.url}" target="_blank">Visit Park Website</a></p>
-//       `;
-//       parkInfoDiv.appendChild(parkDiv);
-//     });
-//   }
+  parkDirections.innerText = "Directions:" + park.directionsInfo;
 
 
-document.querySelector('button').onmousemove = (e) => {
-
-	const x = e.pageX - e.target.offsetLeft
-	const y = e.pageY - e.target.offsetTop
-
-	e.target.style.setProperty('--x', `${ x }px`)
-	e.target.style.setProperty('--y', `${ y }px`)
 }
