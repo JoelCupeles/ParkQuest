@@ -17,6 +17,9 @@
   }
   $fontprimary: red;
 
+.hide{
+  display:none;
+}
 /* Center all elements horizontally */
 
 body {
@@ -34,19 +37,27 @@ body {
   }
   /* Header styles */
   header {
-    display: flex;
+    display: fixed;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    height:--fs-h1;
+    width: 100vw;
     background: url(./Bridge.jpg);
     background-size: cover;
     background-position: center;
   }
-  
+  nav {
+    display: fixed;
+    text-align: center;
+  }
+  a {
+    background-color: #16f033cc;
+    display: fixed;
+  }
   /* Logo styles */
 h1 {
     font-size: 70px;
-    font-weight: 600;
+    font-weight: 60px;
     background: url(./Sky.jpg);
     background-size: 70px 70px;
     color: transparent;
@@ -55,6 +66,7 @@ h1 {
     margin: 0;
     margin-right: auto;
     text-align: center;
+    font-family: --primary-font;
   }
 h2 {
   font-weight: bolder;
@@ -117,7 +129,7 @@ body{
 ul {
     padding: 0;
     list-style: none;
-    background: #f2f2f2;
+    
 }
 ul li {
     display: inline-block;
@@ -160,7 +172,6 @@ ul li a:hover {
   .footer {
     margin-top: 2rem;
     text-align: center;
-    background-color: orange;
   }
   
 
@@ -194,3 +205,41 @@ button {
 }
 
 //image background//
+/* CSS CODE FOR MODAL - PUT INTO SCSS */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
