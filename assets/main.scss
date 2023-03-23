@@ -1,156 +1,101 @@
 :root {
-  --white:#ffffff;
-  --cool-gray: #7f7f7f;
-  --light-teal: #6fbfb2;
-  --dark-gray: #4c4c4c;
-  --font-color: #303952;
-  --cool-gray: #7f7f7f;
-  --light-pink: #f8a5c2;
-  --dark-purple: #574b90;
-  --primary-font: 'Open Sans', sans-serif;
-  --secondary-font: 'Poppins', sans-serif;
-  --tertiary-font: 'Montserrat', sans-serif;
-  --fs-h1: 3rem;
-  --fs-h2: 2.2rem;
-  --fs-h3: 1.5rem;
-  --fs-body: 1rem;
-}
-$fontprimary: red;
+    --white:#ffffff;
+    --cool-gray: #7f7f7f;
+    --light-teal: #6fbfb2;
+    --dark-gray: #4c4c4c;
+    --font-color: #303952;
+    --cool-gray: #7f7f7f;
+    --light-pink: #f8a5c2;
+    --dark-purple: #574b90;
+    --primary-font: 'Open Sans', sans-serif;
+    --secondary-font: 'Poppins', sans-serif;
+    --tertiary-font: 'Montserrat', sans-serif;
+    --fs-h1: 3rem;
+    --fs-h2: 2.2rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1rem;
+  }
 
 /* Center all elements horizontally */
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url(./bridge2.jpg); 
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.test {
-  background-color: blue($color: #191dda);
-
-  
-}
-/* Header styles */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background: url(./Bridge.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-/* Logo styles */
-h1 {
-  font-size: 70px;
-  font-weight: 600;
-  background: url(./Sky.jpg);
-  background-size: 70px 70px;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  margin: 0;
-  margin-right: auto;
-  text-align: center;
-}
-h2 {
-font-weight: bolder;
-text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5); 
-font-size: larger;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-p {
-font-weight: bolder;
-text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5);
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Logo styles */
+  header h1 {
+    margin: 0;
+    background-color: red;
+    margin-right: auto;
+    font-size: var(--fs-h1);
+  }
+  
+  /* Navigation styles */
+  header nav {
+    display: flex;
+    margin-left: auto;
+    background-color: yellow;
+  }
+  
+  /* Subheading styles */
+  .subheading {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: blue;
+  }
+  
+  /* Search bar styles */
+  .search {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: green;
+  }
+  
+  /* Main content styles */
+  .main {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: #f8a5c2;
+  }
+  
+  /* Footer styles */
+  .footer {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: orange;
+  }
+  
 
-}
+ @media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 4rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
 
-img {
-max-width: 400px;
-max-height: 300px;
-}
-body{
-  font-size: 24px;
-  font-family: Arial,sans-serif;
-}
-ul {
-  padding: 0;
-  list-style: none;
-  background: #f2f2f2;
-}
-ul li {
-  display: inline-block;
-}
-ul li a {
-  display: block;
-  padding: 10px 25px;
-  color: #333;
-  text-decoration: none;
-}
-ul li a:hover {
-  color: #fff;
-  background: #939393;
-  background-image: url(./Tree.png);
-  background-size: 100%;
-}
+  /* Header styles */
+  header {
+    flex-direction: row;
+  }
 
-/* Subheading styles */
-.subheading {
-  margin-top: 2rem;
-  text-align: center;
-  background-color: none;
-  font-size: larger;
-}
+  /* Logo styles */
+  header h1 {
+    margin-left: 2rem;
+  }
 
-/* Search bar styles */
-.search {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-/* Main content styles */
-.main {
-  margin-top: 2rem;
-  text-align: center;
-  text-decoration: double;
-}
-
-/* Footer styles */
-.footer {
-  margin-top: 2rem;
-  text-align: center;
-  background-color: orange;
-}
-
-
-@media (min-width: 800px) {
-:root {
-  --fs-h1: 4.5rem;
-  --fs-h2: 4rem;
-  --fs-h3: 1.5rem;
-  --fs-body: 1.125rem;
-}
-}
-
-
-//button css//
-
-button {
---x: 50%;
---y: 50%;
-
-position: relative;
-appearance: none;
-padding: 1em 2em;
-color: white;
-cursor: pointer;
-outline: none;
-border-radius: 100px;
-
-// The magic
-border: 2px solid transparent;
-background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+  /* Navigation styles */
+  header nav {
+    margin-right: 2rem;
+  }
 }
