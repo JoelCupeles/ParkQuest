@@ -172,7 +172,7 @@ closeBtn.addEventListener('click', () => {
   aboutPopup.style.display = 'none';
 });
 
-//Close the popup when the user clicks outside of the content area
+
 window.addEventListener('click', (event) => {
   if (event.target === aboutPopup) {
     aboutPopup.style.display = 'none';
