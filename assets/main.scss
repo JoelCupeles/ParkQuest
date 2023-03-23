@@ -94,8 +94,59 @@ body {
     margin-left: 2rem;
   }
 
-  /* Navigation styles */
-  header nav {
-    margin-right: 2rem;
-  }
+button {
+	--x: 50%;
+	--y: 50%;
+	
+	position: relative;
+	appearance: none;
+	padding: 1em 2em;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	border-radius: 100px;
+	
+	// The magic
+	border: 2px solid transparent;
+	background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}
+
+//image background//
+/* CSS CODE FOR MODAL - PUT INTO SCSS */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
