@@ -96,14 +96,20 @@ function displayWeatherInfo(data, index) {
   var parkDiv = document.querySelector("[data-index='"+ index + "']");
   var weatherDiv = document.createElement('div');
   var currentWeather = document.createElement('div');
-  var forecast = document.createElement('h2');
+  var forecast = document.createElement('div');
+  var imgCurrentWeather = document.createElement('img');
+  var infoCurrentWeather = document.createElement('div');
 
   // console.log(currentWeather);
   // console.log(forecast);
-  // console.log('line 42', data);
-  // console.log(parkDiv);
+  //console.log('line 103', data);
+  //console.log(data.weather[0]);
 
-  currentWeather.innerText = "Current Weather: " + data.weather[0].main + " " + data.main.temp + "°F";
+  imgCurrentWeather.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
+  infoCurrentWeather = "Current Weather: " + data.main.temp + "°F";
+
+  currentWeather.append(imgCurrentWeather,infoCurrentWeather);
+
   forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
 
   weatherDiv.append(currentWeather, forecast);
@@ -111,30 +117,37 @@ function displayWeatherInfo(data, index) {
 }
 
 function displayParkInfo(park, index) {
-  // var parkImage = document.getElementById("park-image");
-  // var parkFacts = document.getElementById("park-facts");
-  // var parkDirections = document.getElementById("park-directions");
   var parkContainer = document.getElementById('park-container');
-  //parkContainer.innerHTML = '';
   var parkDiv = document.createElement('div');
-  var parkTitle = document.createElement('h2');
+  var parkTitle = document.createElement('p');
   var parkImage = document.createElement('img');
   var parkFacts = document.createElement('p');
-  var parkDirections = document.createElement("div");
+  var parkAddress = document.createElement("div");
 
-  parkDiv.setAttribute('class', 'park-info')
-  parkImage.setAttribute('src', park.images[0].url);
-  
   parkDiv.setAttribute('data-index', index)
-  // parkImage.src = park.images[0].url;
-  parkImage.alt = park.images[0].altText;
+  parkDiv.setAttribute('class', 'park-info')
+  parkTitle.innerText = park.fullName;
+  // console.log(park.fullName);
+  parkImage.setAttribute('src', park.images[0].url);
+  // parkImage.alt = park.images[0].altText;
   parkFacts.innerText = park.description;
-  parkDirections.innerText = "Directions:" + park.directionsInfo;
+  
+  parkAddress.innerText = "Address: " + '\n' +
+  park.addresses[0].line1 + '\n' +
+  park.addresses[0].line2 + '\n' +
+  park.addresses[0].line3 + '\n' +
+  park.addresses[0].city + '\n' +
+  park.addresses[0].stateCode + '\n' +
+  park.addresses[0].postalCode;
 
-  parkDiv.append(parkTitle,parkImage,parkFacts,parkDirections);
+  //parkDirections.innerText = "Directions:" + park.directionsInfo;
+
+  parkDiv.append(parkTitle,parkImage,parkFacts,parkAddress);
   parkContainer.appendChild(parkDiv);
 
 }
+
+
 // Get the modal and other elements
 const contactModal = document.getElementById('contactModal');
 const contactLink = document.querySelector('.nav-item a[href="#contact"]');
