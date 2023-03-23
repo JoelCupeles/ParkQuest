@@ -7,11 +7,11 @@ var span = document.getElementsByClassName("close")[0];
 // console.log(modal);
 
 //hide function//
-const about = document.getElementById("about")
+//const about = document.getElementById("about")
 
-about.addEventListener("click", function (){
-  about.classList.add('hide')
-})
+//about.addEventListener("click", function (){
+  //about.classList.add('hide')
+//})
 //
 
 document.getElementById("search-form").addEventListener("submit", function(event) {
@@ -138,5 +138,6 @@ function displayParkInfo(park, index) {
   parkFacts.innerText = park.description;
   parkDirections.innerText = "Directions:" + park.directionsInfo;
 
-
 }
+
+
