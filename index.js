@@ -16,13 +16,14 @@ var span = document.getElementsByClassName("close")[0];
 
 document.getElementById("search-form").addEventListener("submit", function(event) {
   event.preventDefault();
+  
   var location = document.getElementById("location").value;
 
   var parkUrl = "https://developer.nps.gov/api/v1/parks?q="
   + location
   + "&api_key="
   + API_KEY_NPS;
-
+  
   fetch(parkUrl)
     .then(function(response) {
       if (!response.ok) {
@@ -109,7 +110,7 @@ function displayWeatherInfo(data, index) {
   // console.log(currentWeather);
   // console.log(forecast);
   // console.log('line 42', data);
-  console.log(parkDiv);
+  // console.log(parkDiv);
 
   currentWeather.innerText = "Current Weather: " + data.weather[0].main + " " + data.main.temp + "°F";
   forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
@@ -122,7 +123,8 @@ function displayParkInfo(park, index) {
   // var parkImage = document.getElementById("park-image");
   // var parkFacts = document.getElementById("park-facts");
   // var parkDirections = document.getElementById("park-directions");
-  var parkContainer = document.getElementById('park-container')
+  var parkContainer = document.getElementById('park-container');
+  //parkContainer.innerHTML = '';
   var parkDiv = document.createElement('div');
   var parkTitle = document.createElement('h2');
   var parkImage = document.createElement('img');
