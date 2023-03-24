@@ -45,13 +45,13 @@ nav {
 }
 
 a {
-  background-color: rgba(22, 240, 51, 0.8);
+  background-color: var(--light-teal);
   display: fixed;
 }
 
 /* Logo styles */
 h1 {
-  font-size: 70px;
+  font-size: var(--fs-h1);
   font-weight: 60px;
   background: url(./Sky.jpg);
   background-size: 70px 70px;
@@ -68,7 +68,7 @@ h1 {
 h2 {
   font-weight: bolder;
   text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5);
-  font-size: larger;
+  font-size: var(--fs-h2);
 }
 
 p {
@@ -89,7 +89,7 @@ p {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: var(--light-teal);
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -100,13 +100,13 @@ p {
 .close-contact {
   color: #aaaaaa;
   float: right;
-  font-size: 28px;
+  font-size: var(--fs-body);
   font-weight: bold;
 }
 
 .close-contact:hover,
 .close-contact:focus {
-  color: #000;
+  color: var(--dark-gray);
   text-decoration: none;
   cursor: pointer;
 }
@@ -154,8 +154,8 @@ img {
 }
 
 body {
-  font-size: 24px;
-  font-family: Arial, sans-serif;
+  font-size: var(--fs-body);
+  font-family: var(--primary-font);
 }
 
 ul {
@@ -185,21 +185,22 @@ ul li a:hover {
 .subheading {
   margin-top: 2rem;
   text-align: center;
-  background-color: blue;
+  background-color: var(--light-teal);
 }
 
 /* Search bar styles */
 .search {
   margin-top: 2rem;
   text-align: center;
-  background-color: green;
+  background-color: var(--light-teal);
 }
 
 /* Main content styles */
 .main {
   margin-top: 2rem;
   text-align: center;
-  background-color: #f8a5c2;
+  background-color: var(--light-teal);
+  font-family: var(--primary-font);
 }
 
 .park-facts,
@@ -211,15 +212,31 @@ ul li a:hover {
   margin-right: 5px;
 }
 
+.address-weather-container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
 .weather {
-  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+  flex-grow: 1;
 }
 
 .park-info {
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
   padding: 10px;
+  height: auto;
 }
 
 .park-info h2 {
@@ -252,6 +269,23 @@ ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.park-image {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-grow: 1;
+}
+
+.park-info-section {
+  display: flex;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 100%;
+  flex-grow: 1;
 }
 
 /* Footer styles */
