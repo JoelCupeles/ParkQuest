@@ -29,19 +29,26 @@ body {
 
 /* Header styles */
 header {
-  display: fixed;
-  justify-content: space-between;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  top: 0;
+  left: 0;
   align-items: center;
   height: --fs-h1;
   width: 100vw;
+  height: 114px;
   background: url(./Bridge.jpg);
   background-size: cover;
   background-position: center;
 }
 
 nav {
-  display: fixed;
+  top: 0;
   text-align: center;
+  bottom: 0;
+  right: 0;
 }
 
 a {
@@ -60,7 +67,6 @@ h1 {
   background-clip: text;
   margin: 0;
   background-color: red;
-  margin-right: auto;
   text-align: center;
   font-family: --primary-font;
 }
@@ -183,7 +189,7 @@ ul li a:hover {
 
 /* Subheading styles */
 .subheading {
-  margin-top: 2rem;
+  margin-top: 114px;
   text-align: center;
   background-color: var(--light-teal);
 }
@@ -303,12 +309,9 @@ ul li a:hover {
   }
   /* Header styles */
   header {
-    flex-direction: row;
+    flex-direction: column;
   }
   /* Logo styles */
-  header h1 {
-    margin-left: 2rem;
-  }
   button {
     --x: 50%;
     --y: 50%;
