@@ -9,7 +9,7 @@ No installation is required for this project.
 ## Usage
 1. Select a state from the dropdown menu in the "State" field.
 2. Click the "Search" button.
-3. The application will display a list of national parks in the selected state along with the current weather information for each park.
+3. The application will display a list of national parks in the selected state along with the      current weather information for each park.
 
 ## Features
 1. Search for national parks by state.
@@ -24,7 +24,7 @@ Wasif Mahmood
 
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. 
 
 ## Links
 https://github.com/JoelCupeles/ParkQuest
