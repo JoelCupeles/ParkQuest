@@ -113,25 +113,59 @@ function displayWeatherInfo(data, index) {
   forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
 
   weatherDiv.append(currentWeather, forecast);
-  parkDiv.appendChild(weatherDiv);
+  var parkInfoSection = parkDiv.querySelector('.park-info-section');
+  parkInfoSection.appendChild(weatherDiv);
+}
+  
+
+function displayWeatherInfo(data, index) {
+  // const currentWeather = document.getElementById("current-weather");
+  // const forecast = document.getElementById("forecast");
+
+  var parkDiv = document.querySelector("[data-index='"+ index + "']");
+  var weatherDiv = document.createElement('div');
+  var currentWeather = document.createElement('div');
+  var forecast = document.createElement('div');
+  var imgCurrentWeather = document.createElement('img');
+  var infoCurrentWeather = document.createElement('div');
+
+  // console.log(currentWeather);
+  // console.log(forecast);
+  //console.log('line 103', data);
+  //console.log(data.weather[0]);
+
+  imgCurrentWeather.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
+  infoCurrentWeather = "Current Weather: " + data.main.temp + "°F";
+
+  currentWeather.append(imgCurrentWeather,infoCurrentWeather);
+
+  forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
+
+  weatherDiv.append(currentWeather, forecast);
+  var parkInfoSection = parkDiv.querySelector('.park-info-section');
+  parkInfoSection.appendChild(weatherDiv);
 }
 
 function displayParkInfo(park, index) {
   var parkContainer = document.getElementById('park-container');
   var parkDiv = document.createElement('div');
-  var parkTitle = document.createElement('p');
+  var parkTitle = document.createElement('h2');
+  var parkContent = document.createElement('div');
   var parkImage = document.createElement('img');
+  var parkText = document.createElement('div');
   var parkFacts = document.createElement('p');
+  var parkInfoSection = document.createElement('div');
   var parkAddress = document.createElement("div");
 
-  parkDiv.setAttribute('data-index', index)
-  parkDiv.setAttribute('class', 'park-info')
-  parkTitle.innerText = park.fullName;
-  // console.log(park.fullName);
-  parkImage.setAttribute('src', park.images[0].url);
-  // parkImage.alt = park.images[0].altText;
-  parkFacts.innerText = park.description;
+  parkDiv.setAttribute('data-index', index);
+  parkDiv.setAttribute('class', 'park-info');
   
+  parkTitle.innerText = park.fullName;
+  
+  parkImage.setAttribute('src', park.images[0].url);
+  
+  parkFacts.innerText = park.description;
+
   parkAddress.innerText = "Address: " + '\n' +
   park.addresses[0].line1 + '\n' +
   park.addresses[0].line2 + '\n' +
@@ -140,12 +174,72 @@ function displayParkInfo(park, index) {
   park.addresses[0].stateCode + '\n' +
   park.addresses[0].postalCode;
 
-  //parkDirections.innerText = "Directions:" + park.directionsInfo;
+  parkInfoSection.classList.add('park-info-section');
+  parkInfoSection.appendChild(parkFacts);
+  parkInfoSection.appendChild(parkAddress);
+  
+  parkText.appendChild(parkInfoSection);
 
-  parkDiv.append(parkTitle,parkImage,parkFacts,parkAddress);
+  parkContent.appendChild(parkImage);
+  parkContent.appendChild(parkText);
+
+  parkDiv.appendChild(parkTitle);
+  parkDiv.appendChild(parkContent);
+
   parkContainer.appendChild(parkDiv);
-
 }
+
+function displayParkInfo(park, index) {
+  var parkContainer = document.getElementById('park-container');
+  var parkDiv = document.createElement('div');
+  var parkTitle = document.createElement('h2');
+  var parkContent = document.createElement('div');
+  var parkImage = document.createElement('img');
+  var parkText = document.createElement('div');
+  var parkFacts = document.createElement('p');
+  var parkInfoSection = document.createElement('div');
+  var parkAddress = document.createElement("div");
+
+  parkDiv.setAttribute('data-index', index);
+  parkDiv.setAttribute('class', 'park-info');
+  
+  parkTitle.innerText = park.fullName;
+  
+  parkImage.setAttribute('src', park.images[0].url);
+  
+  parkFacts.classList.add('park-facts');
+  parkFacts.innerText = park.description;
+
+  parkAddress.classList.add('park-address');
+  parkAddress.innerText = "Address: " + '\n' +
+  park.addresses[0].line1 + '\n' +
+  park.addresses[0].line2 + '\n' +
+  park.addresses[0].line3 + '\n' +
+  park.addresses[0].city + '\n' +
+  park.addresses[0].stateCode + '\n' +
+  park.addresses[0].postalCode;
+
+  parkInfoSection.classList.add('park-info-section');
+  parkInfoSection.appendChild(parkFacts);
+  parkInfoSection.appendChild(parkAddress);
+  
+  parkText.appendChild(parkInfoSection);
+
+  parkContent.appendChild(parkImage);
+  parkContent.appendChild(parkText);
+
+  parkDiv.appendChild(parkTitle);
+  parkDiv.appendChild(parkContent);
+
+  parkContainer.appendChild(parkDiv);
+}
+
+  
+
+
+
+
+
 
 
 // Get the modal and other elements
