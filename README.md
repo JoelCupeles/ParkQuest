@@ -27,4 +27,4 @@ Wasif Mahmood
 This project is licensed under the MIT License. 
 
 ## Links
-https://github.com/JoelCupeles/ParkQuest
+https://joelcupeles.github.io/ParkQuest/
