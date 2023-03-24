@@ -235,34 +235,12 @@ function displayParkInfo(park, index) {
   parkDiv.setAttribute('data-index', index);
   parkDiv.setAttribute('class', 'park-info');
   
-<<<<<<< Updated upstream
   parkTitle.innerText = park.fullName;
   
   parkImage.setAttribute('src', park.images[0].url);
   
   parkFacts.innerText = park.description;
 
-  parkAddress.innerText = "Address: " + '\n' +
-  park.addresses[0].line1 + '\n' +
-  park.addresses[0].line2 + '\n' +
-  park.addresses[0].line3 + '\n' +
-  park.addresses[0].city + '\n' +
-  park.addresses[0].stateCode + '\n' +
-  park.addresses[0].postalCode;
-
-  parkInfoSection.classList.add('park-info-section');
-  parkInfoSection.appendChild(parkFacts);
-  parkInfoSection.appendChild(parkAddress);
-  
-  parkText.appendChild(parkInfoSection);
-
-  parkContent.appendChild(parkImage);
-  parkContent.appendChild(parkText);
-
-  parkDiv.appendChild(parkTitle);
-  parkDiv.appendChild(parkContent);
-=======
-  // parkAddress.innerText = "Address: " + '\n';
   line1.textContent = park.addresses[0].line1 !== ''? park.addresses[0].line1: '';
   line2.textContent =  park.addresses[0].line2 !== ''? park.addresses[0].line2: '';
   line3.textContent = park.addresses[0].line3 !== ''? park.addresses[0].line3: '';
@@ -271,9 +249,17 @@ function displayParkInfo(park, index) {
   postalCode.textContent = park.addresses[0].postalCode !== ''? park.addresses[0].postalCode: '';
 
   parkAddress.append(line1,line2,line3,city,stateCode,postalCode);
-  //parkDirections.innerText = "Directions:" + park.directionsInfo;
->>>>>>> Stashed changes
+  console.log(parkAddress);
+  parkInfoSection.classList.add('park-info-section');
+  parkInfoSection.appendChild(parkFacts);
+  parkInfoSection.appendChild(parkAddress);
+  
+  parkText.appendChild(parkInfoSection);
 
+  parkContent.appendChild(parkImage);
+  parkContent.appendChild(parkText);
+  parkDiv.appendChild(parkTitle);
+  parkDiv.appendChild(parkContent);
   parkContainer.appendChild(parkDiv);
 }
 
