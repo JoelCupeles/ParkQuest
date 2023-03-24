@@ -116,35 +116,99 @@ function displayWeatherInfo(data, index) {
   var parkInfoSection = parkDiv.querySelector('.park-info-section');
   parkInfoSection.appendChild(weatherDiv);
 }
-  
 
 function displayWeatherInfo(data, index) {
-  // const currentWeather = document.getElementById("current-weather");
-  // const forecast = document.getElementById("forecast");
-
   var parkDiv = document.querySelector("[data-index='"+ index + "']");
+  var parkInfoSection = parkDiv.querySelector(".park-info-section");
   var weatherDiv = document.createElement('div');
   var currentWeather = document.createElement('div');
   var forecast = document.createElement('div');
   var imgCurrentWeather = document.createElement('img');
   var infoCurrentWeather = document.createElement('div');
 
-  // console.log(currentWeather);
-  // console.log(forecast);
-  //console.log('line 103', data);
-  //console.log(data.weather[0]);
-
   imgCurrentWeather.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
-  infoCurrentWeather = "Current Weather: " + data.main.temp + "°F";
+  infoCurrentWeather.innerText = "Current Weather: " + data.main.temp + "°F";
 
-  currentWeather.append(imgCurrentWeather,infoCurrentWeather);
+  currentWeather.appendChild(imgCurrentWeather);
+  currentWeather.appendChild(infoCurrentWeather);
 
   forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
 
-  weatherDiv.append(currentWeather, forecast);
-  var parkInfoSection = parkDiv.querySelector('.park-info-section');
-  parkInfoSection.appendChild(weatherDiv);
+  weatherDiv.classList.add('weather');
+  weatherDiv.appendChild(currentWeather);
+  weatherDiv.appendChild(forecast);
+
+  // Find the park-address div
+  var parkAddress = parkDiv.querySelector(".park-address");
+
+  // Create a container for address and weather
+  var addressWeatherContainer = document.createElement('div');
+  addressWeatherContainer.classList.add('address-weather-container');
+
+  // Move the park-address div into the addressWeatherContainer
+  addressWeatherContainer.appendChild(parkAddress);
+
+  // Append the weatherDiv to the addressWeatherContainer
+  addressWeatherContainer.appendChild(weatherDiv);
+
+  // Append the addressWeatherContainer to the parkInfoSection
+  parkInfoSection.appendChild(addressWeatherContainer);
 }
+
+
+// function displayWeatherInfo(data, index) {
+//   var parkDiv = document.querySelector("[data-index='"+ index + "']");
+//   var parkInfoSection = parkDiv.querySelector(".park-info-section");
+//   var weatherDiv = document.createElement('div');
+//   var currentWeather = document.createElement('div');
+//   var forecast = document.createElement('div');
+//   var imgCurrentWeather = document.createElement('img');
+//   var infoCurrentWeather = document.createElement('div');
+
+//   imgCurrentWeather.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
+//   infoCurrentWeather.innerText = "Current Weather: " + data.main.temp + "°F";
+
+//   currentWeather.appendChild(imgCurrentWeather);
+//   currentWeather.appendChild(infoCurrentWeather);
+
+//   forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
+
+//   weatherDiv.classList.add('weather');
+//   weatherDiv.appendChild(currentWeather);
+//   weatherDiv.appendChild(forecast);
+
+//   parkInfoSection.appendChild(weatherDiv);
+// }
+
+  
+
+// function displayWeatherInfo(data, index) {
+//   // const currentWeather = document.getElementById("current-weather");
+//   // const forecast = document.getElementById("forecast");
+
+//   var parkDiv = document.querySelector("[data-index='"+ index + "']");
+//   var weatherDiv = document.createElement('div');
+//   var currentWeather = document.createElement('div');
+//   var forecast = document.createElement('div');
+//   var imgCurrentWeather = document.createElement('img');
+//   var infoCurrentWeather = document.createElement('div');
+
+//   // console.log(currentWeather);
+//   // console.log(forecast);
+//   //console.log('line 103', data);
+//   //console.log(data.weather[0]);
+
+//   imgCurrentWeather.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
+//   infoCurrentWeather = "Current Weather: " + data.main.temp + "°F";
+
+//   currentWeather.append(imgCurrentWeather,infoCurrentWeather);
+
+//   forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
+
+//   weatherDiv.append(currentWeather, forecast);
+//   var parkInfoSection = parkDiv.querySelector('.park-info-section');
+//   parkInfoSection.appendChild(weatherDiv);
+// }
 
 function displayParkInfo(park, index) {
   var parkContainer = document.getElementById('park-container');
@@ -206,7 +270,8 @@ function displayParkInfo(park, index) {
   parkTitle.innerText = park.fullName;
   
   parkImage.setAttribute('src', park.images[0].url);
-  
+  parkImage.classList.add('park-image');
+
   parkFacts.classList.add('park-facts');
   parkFacts.innerText = park.description;
 
