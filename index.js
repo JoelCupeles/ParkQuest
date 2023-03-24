@@ -100,6 +100,11 @@ function displayWeatherInfo(data, index) {
   var imgCurrentWeather = document.createElement('img');
   var infoCurrentWeather = document.createElement('div');
 
+  //var imgFive = document.createElement('img');
+  //var infoFive = document.createElement('div');
+
+  //imgFive.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
+  //infoFive = "Current Weather: " + data.main.temp + "°F";
   // console.log(currentWeather);
   // console.log(forecast);
   //console.log('line 103', data);
@@ -107,7 +112,6 @@ function displayWeatherInfo(data, index) {
 
   imgCurrentWeather.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
   infoCurrentWeather = "Current Weather: " + data.main.temp + "°F";
-
   currentWeather.append(imgCurrentWeather,infoCurrentWeather);
 
   forecast.innerText = "Forecast: " + data.main.temp_min + "°F - " + data.main.temp_max + "°F";
@@ -220,10 +224,18 @@ function displayParkInfo(park, index) {
   var parkFacts = document.createElement('p');
   var parkInfoSection = document.createElement('div');
   var parkAddress = document.createElement("div");
+  
+  var line1 = document.createElement('p');
+  var line2 = document.createElement('p');
+  var line3 = document.createElement('p');
+  var city = document.createElement('p');
+  var stateCode = document.createElement('p');
+  var postalCode = document.createElement('p');
 
   parkDiv.setAttribute('data-index', index);
   parkDiv.setAttribute('class', 'park-info');
   
+<<<<<<< Updated upstream
   parkTitle.innerText = park.fullName;
   
   parkImage.setAttribute('src', park.images[0].url);
@@ -249,6 +261,18 @@ function displayParkInfo(park, index) {
 
   parkDiv.appendChild(parkTitle);
   parkDiv.appendChild(parkContent);
+=======
+  // parkAddress.innerText = "Address: " + '\n';
+  line1.textContent = park.addresses[0].line1 !== ''? park.addresses[0].line1: '';
+  line2.textContent =  park.addresses[0].line2 !== ''? park.addresses[0].line2: '';
+  line3.textContent = park.addresses[0].line3 !== ''? park.addresses[0].line3: '';
+  city.textContent = park.addresses[0].city !== ''? park.addresses[0].city: '';
+  stateCode.textContent = park.addresses[0].stateCode !== ''? park.addresses[0].stateCode: '';
+  postalCode.textContent = park.addresses[0].postalCode !== ''? park.addresses[0].postalCode: '';
+
+  parkAddress.append(line1,line2,line3,city,stateCode,postalCode);
+  //parkDirections.innerText = "Directions:" + park.directionsInfo;
+>>>>>>> Stashed changes
 
   parkContainer.appendChild(parkDiv);
 }

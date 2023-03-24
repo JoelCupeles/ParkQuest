@@ -45,13 +45,13 @@ nav {
 }
 
 a {
-  background-color: rgba(22, 240, 51, 0.8);
+  background-color: var(--light-teal);
   display: fixed;
 }
 
 /* Logo styles */
 h1 {
-  font-size: 70px;
+  font-size: var(--fs-h1);
   font-weight: 60px;
   background: url(./Sky.jpg);
   background-size: 70px 70px;
@@ -68,7 +68,7 @@ h1 {
 h2 {
   font-weight: bolder;
   text-shadow: 2px 2px 3px rgba(253, 252, 252, 0.5);
-  font-size: larger;
+  font-size: var(--fs-h2);
 }
 
 p {
@@ -89,7 +89,7 @@ p {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: var(--light-teal);
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -100,13 +100,13 @@ p {
 .close-contact {
   color: #aaaaaa;
   float: right;
-  font-size: 28px;
+  font-size: var(--fs-body);
   font-weight: bold;
 }
 
 .close-contact:hover,
 .close-contact:focus {
-  color: #000;
+  color: var(--dark-gray);
   text-decoration: none;
   cursor: pointer;
 }
@@ -154,8 +154,8 @@ img {
 }
 
 body {
-  font-size: 24px;
-  font-family: Arial, sans-serif;
+  font-size: var(--fs-body);
+  font-family: var(--primary-font);
 }
 
 ul {
@@ -185,21 +185,22 @@ ul li a:hover {
 .subheading {
   margin-top: 2rem;
   text-align: center;
-  background-color: blue;
+  background-color: var(--light-teal);
 }
 
 /* Search bar styles */
 .search {
   margin-top: 2rem;
   text-align: center;
-  background-color: green;
+  background-color: var(--light-teal);
 }
 
 /* Main content styles */
 .main {
   margin-top: 2rem;
   text-align: center;
-  background-color: #f8a5c2;
+  background-color: var(--light-teal);
+  font-family: var(--primary-font);
 }
 
 .park-facts,
