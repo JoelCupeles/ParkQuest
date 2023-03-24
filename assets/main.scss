@@ -198,6 +198,98 @@ ul li a:hover {
     text-align: center;
     background-color: #f8a5c2;
   }
+
+  .park-facts,
+.park-address,
+.weather {
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.weather {
+  margin-right: 0;
+}
+
+
+  .park-info {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .park-info h2 {
+    margin-bottom: 10px;
+  }
+  
+  .park-info > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .park-info img {
+    flex: 0 0 50%;
+    max-width: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .park-info > div > div {
+    flex: 1;
+  }
+  
+  .park-info p {
+    white-space: pre-wrap;
+  }
+  
+  .park-info .park-info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+
+//   .park-info {
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+//     margin-bottom: 20px;
+//     padding: 10px;
+//   }
+  
+//   .park-info h2 {
+//     margin-bottom: 10px;
+//   }
+  
+//   .park-info > div {
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: flex-start;
+//   }
+  
+//   .park-info img {
+//     flex: 0 0 50%;
+//     max-width: 50%;
+//     object-fit: cover;
+//     margin-right: 10px;
+//   }
+  
+//   .park-info > div > div {
+//     flex: 1;
+//   }
+  
+//   .park-info p {
+//     white-space: pre-wrap;
+//   }
+
+  
+// .park-info .park-info-section {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 10px;
+// }
+  
   
   /* Footer styles */
   .footer {
