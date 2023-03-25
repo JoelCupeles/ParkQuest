@@ -233,6 +233,8 @@ ul li a:hover {
   padding: 10px;
   border-radius: 5px;
   flex-grow: 1;
+  text-align: center;
+  margin: 0 5px;
 }
 
 .park-info {

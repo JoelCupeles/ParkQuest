@@ -73,6 +73,8 @@ function displayWeatherInfo(data, index) {
     var infoCurrentWeather = document.createElement('div');
     var wind = document.createElement('p');
     var humid = document.createElement('p');
+    weatherDiv.classList.add('weather');
+
 
     imgCurrentWeather.setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png"); // Image
     infoCurrentWeather = "Current Weather: " + data.main.temp + "°F";
