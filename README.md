@@ -36,4 +36,4 @@ This project is licensed under the MIT License.
 ## Links
 https://joelcupeles.github.io/ParkQuest/
 
-![](https://github.com/JoelCupeles/ParkQuest/blob/15f2c3202ec531470f27937ea65274cd8beb573d/assets/Page%20Screenshoot.png)
+![](https://github.com/JoelCupeles/ParkQuest/blob/04ddadb00d7364769c0c70b3f53e61f356155af1/assets/joelcupeles.github.io_ParkQuest_%20(1).png)
