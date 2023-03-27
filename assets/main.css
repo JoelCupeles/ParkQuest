@@ -1,7 +1,7 @@
 :root {
   --white:#ffffff;
   --cool-gray: #7f7f7f;
-  --light-teal: #6fbfb2;
+  --light-teal: #79eeda;
   --dark-gray: #4c4c4c;
   --font-color: #303952;
   --cool-gray: #7f7f7f;
@@ -69,6 +69,7 @@ h1 {
   background-color: red;
   text-align: center;
   font-family: --primary-font;
+  
 }
 
 h2 {
@@ -178,6 +179,7 @@ ul li a {
   padding: 10px 25px;
   color: #333;
   text-decoration: none;
+  border: 2px solid black;
 }
 
 ul li a:hover {
@@ -192,6 +194,7 @@ ul li a:hover {
   margin-top: 114px;
   text-align: center;
   background-color: var(--light-teal);
+  border: 1px solid black;
 }
 
 /* Search bar styles */
@@ -199,6 +202,7 @@ ul li a:hover {
   margin-top: 2rem;
   text-align: center;
   background-color: var(--light-teal);
+  border: 1px solid black;
 }
 
 /* Main content styles */
@@ -263,6 +267,8 @@ ul li a:hover {
   -o-object-fit: cover;
      object-fit: cover;
   margin-right: 10px;
+  border-radius: 10%;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .park-info > div > div {
@@ -284,6 +290,8 @@ ul li a:hover {
   -o-object-fit: cover;
      object-fit: cover;
   flex-grow: 1;
+  border: #000;
+
 }
 
 .park-info-section {
@@ -297,9 +305,12 @@ ul li a:hover {
 }
 
 /* Footer styles */
-.footer {
+#about {
   margin-top: 2rem;
   text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #79eeda;
 }
 
 @media (min-width: 800px) {
